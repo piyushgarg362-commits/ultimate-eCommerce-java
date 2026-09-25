@@ -10,6 +10,7 @@
     <groupId>MyECommerce</groupId>
     <artifactId>MyECommerce</artifactId>
     <version>1.0.0</version>
+
     <packaging>war</packaging>
 
     <name>MyECommerce</name>
@@ -23,7 +24,15 @@
 
     <dependencies>
 
-        <!-- JavaMail API - required by SendNewEmail.java -->
+        <!-- Java Servlet API -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JavaMail -->
         <dependency>
             <groupId>com.sun.mail</groupId>
             <artifactId>javax.mail</artifactId>
@@ -33,11 +42,12 @@
     </dependencies>
 
     <build>
+
         <finalName>MyECommerce</finalName>
 
         <plugins>
 
-            <!-- Java Compiler -->
+            <!-- Maven Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -48,7 +58,7 @@
                 </configuration>
             </plugin>
 
-            <!-- WAR Plugin -->
+            <!-- Maven WAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -56,6 +66,7 @@
             </plugin>
 
         </plugins>
+
     </build>
 
 </project>
